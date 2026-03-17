@@ -1,74 +1,96 @@
-# React + TypeScript + Vite
+# Codrillo Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Portfólio de app web React + TypeScript + Vite com gerenciador de snippets, UI elegante e modo escuro.
 
-Currently, two official plugins are available:
+## 🚀 Sobre o projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+`codrillo` é um projeto de front-end que demonstra um app de gerenciamento de trechos de código (snippets), com interface moderna e responsiva. Foi construído com:
 
-## React Compiler
+- Vite
+- React 18 + TypeScript
+- Chakra UI v3
+- React Router DOM
+- Shiki para destaque de código
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🧩 Estrutura principal
 
-## Expanding the ESLint configuration
+- `src/main.tsx` - ponto de entrada
+- `src/app/App.tsx` - componente raiz (rotas + layout)
+- `src/app/pages/` - páginas principais
+  - `home/` - página inicial com hero, features e snippets
+  - `signin/`, `signup/` - fluxo de autenticação (mock de exemplo)
+- `src/components/` - componentes reutilizáveis (Header, Footer, UI customizada)
+- `src/routes/Routes.tsx` - definição das rotas
+- `src/style/global.css` - estilos globais
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🎯 Funcionalidades incluídas
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Layout completo para apresentação de funcionalidades
+- Componentes responsivos com Chakra UI
+- Controles de modo claro/escuro
+- Painéis de snippets com destaque de sintaxe
+- Formulários de login/cadastro e fluxo de recuperação de senha (UI)
+- Navegação com React Router
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🛠️ Instalação e execução
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Prérequisitos
+
+- Node.js 18+ ou 20+
+- npm ou pnpm
+
+### Passos
+
+```bash
+cd codrillo
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Acesse: `http://localhost:5173`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Build para produção
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
+npm run preview
 ```
-# codrillo-web-app
+
+## 🔎 Lint e formatação
+
+- ESLint: `npm run lint`
+
+## 🧪 Testes
+
+Ainda não há suíte de testes configurada, mas a base do projeto é compatível com Vitest e React Testing Library.
+
+## 📦 Dependências principais
+
+- `react`, `react-dom`
+- `react-router-dom`
+- `@chakra-ui/react`, `@chakra-ui/icons`
+- `framer-motion` (se houver animações UI)
+- `shiki` (syntax highlighting)
+
+## 🛠️ Futuras melhorias sugeridas
+
+- Autenticação real com backend (JWT / Auth0 / Firebase)
+- CRUD de snippets com API e banco de dados
+- Paginação e filtros de pesquisa em snippets
+- Testes unitários e de integração
+- Internacionalização (i18n)
+
+## 🤝 Contribuição
+
+1. Fork do repositório
+2. Crie uma branch: `git checkout -b feat/minha-idea`
+3. Faça commits significativos
+4. Abra PR com descrição e screenshots
+
+## 📄 Licença
+
+MIT © [Seu Nome]
+
+---
+
+> Dica: personalize os textos de `Sobre` e `Futuras melhorias` com suas metas e diferencial técnico.
