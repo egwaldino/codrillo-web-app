@@ -9,7 +9,7 @@ export type Snippet = {
 export const snippetsData: Snippet[] = [
   {
     id: 1,
-    title: "React useDebounce Hook",
+    title: "Java useDebounce Hook",
     description: "Custom hook para otimizar buscas e inputs com debounce",
     code: `<div class="container">
     <h1>Hello, world!</h1>
@@ -39,7 +39,7 @@ export const snippetsData: Snippet[] = [
   },
   {
     id: 3,
-    title: "React useDebounce Hook",
+    title: "Postman useDebounce Hook",
     description: "Custom hook para otimizar buscas e inputs com debounce",
     code: `<div class="container">
     <h1>Hello, world!</h1>
@@ -54,7 +54,7 @@ export const snippetsData: Snippet[] = [
   },
   {
     id: 4,
-    title: "React useDebounce Hook",
+    title: "Node useDebounce Hook",
     description: "Custom hook para otimizar buscas e inputs com debounce",
     code: `<div class="container">
     <h1>Hello, world!</h1>
@@ -69,7 +69,7 @@ export const snippetsData: Snippet[] = [
   },
   {
     id: 5,
-    title: "React useDebounce Hook",
+    title: "Laravel useDebounce Hook",
     description: "Custom hook para otimizar buscas e inputs com debounce",
     code: `<div class="container">
     <h1>Hello, world!</h1>
@@ -84,7 +84,7 @@ export const snippetsData: Snippet[] = [
   },
   {
     id: 6,
-    title: "React useDebounce Hook",
+    title: "Figma useDebounce Hook",
     description: "Custom hook para otimizar buscas e inputs com debounce",
     code: `<div class="container">
     <h1>Hello, world!</h1>
@@ -114,7 +114,7 @@ export const snippetsData: Snippet[] = [
   },
   {
     id: 8,
-    title: "React useDebounce Hook",
+    title: "Cloud useDebounce Hook",
     description: "Custom hook para otimizar buscas e inputs com debounce",
     code: `<div class="container">
     <h1>Hello, world!</h1>

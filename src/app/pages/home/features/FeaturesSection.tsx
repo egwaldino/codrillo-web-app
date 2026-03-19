@@ -18,8 +18,13 @@ export function FeaturesSection(): JSX.Element {
         {featuresData.map((card) => (
           <VStack
             key={card.id}
-            transition="0.2s"
-            _hover={{ transform: "translateY(-4px)" }}
+            _hover={{
+              transform: "translateY(-1px) scale(1.02)",
+              boxShadow: "0 10px 25px rgba(154, 202, 56, 0.25)",
+              borderColor: "#9ACA38",
+              borderRadius: "4xl",
+            }}
+            transition="all 0.2s ease"
           >
             <Stack>
               <VStack

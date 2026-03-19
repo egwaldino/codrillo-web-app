@@ -1,6 +1,9 @@
-import { Text, Flex, Heading, Button, Icon } from "@chakra-ui/react";
+import { Text, Flex, Heading, Icon, Button } from "@chakra-ui/react";
 import { heroData } from "./heroData";
 import type { JSX } from "react";
+import { SeeExample } from "./SeeExample";
+import { CreateSnippetModal } from "@/components/CreateSnippetModal";
+import { IoCodeSlash } from "react-icons/io5";
 
 export function HeroSection(): JSX.Element {
   return (
@@ -37,25 +40,30 @@ export function HeroSection(): JSX.Element {
         </Text>
 
         <Flex gap={5}>
-          {heroData.buttons.map((button, index) => (
+          <CreateSnippetModal>
             <Button
-              key={index}
-              w={28}
-              type="submit"
-              color={button.variant === "primary" ? "#1c1c1c" : "#9ACA38"}
-              fontWeight={"bold"}
+              w={36}
+              h={10}
+              gap={2}
+              size="xs"
               rounded={"xl"}
-              bgColor={button.variant === "primary" ? "#9ACA38" : "#1c1c1c"}
-              borderWidth={button.variant === "secondary" ? "1px" : undefined}
-              borderColor={
-                button.variant === "secondary" ? "#9ACA38" : undefined
-              }
-              alignSelf="flex-start"
+              bg="#9ACA38"
+              color="#1c1c1c"
+              variant="outline"
+              fontWeight={"semibold"}
+              borderColor={"#9ACA38"}
+              _hover={{
+                transform: "translateY(-1px) scale(1.02)",
+                boxShadow: "0 10px 25px rgba(154, 202, 56, 0.25)",
+                borderColor: "#9ACA38",
+              }}
+              transition="all 0.2s ease"
             >
-              {button.icon && <Icon as={button.icon} />}
-              {button.text}
+              <IoCodeSlash />
+              Começar agora
             </Button>
-          ))}
+          </CreateSnippetModal>
+          <SeeExample />
         </Flex>
       </Flex>
     </>
