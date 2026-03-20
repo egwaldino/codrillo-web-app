@@ -15,14 +15,15 @@ import { useState } from "react";
 
 import LogotipoCodrillo from "@/assets/LogotipoCodrillo.png";
 import { CreateSnippetModal } from "./CreateSnippetModal";
-import { snippetsData } from "@/app/pages/home/snippets/snippetsData";
+import { snippetsData, type Snippet } from "@/app/pages/home/snippets/snippetsData";
 
 type HeaderProps = {
   onSearchChange: (value: string) => void;
   onSelectSnippet: (title: string | null) => void;
+  onCreateSnippet: React.Dispatch<React.SetStateAction<Snippet[]>>;
 };
 
-export function Header({ onSearchChange, onSelectSnippet }: HeaderProps) {
+export function Header({ onSearchChange, onSelectSnippet, onCreateSnippet }: HeaderProps) {
   const [search, setSearch] = useState("");
   const [isOpen, setIsOpen] = useState(false);
 
@@ -116,7 +117,7 @@ export function Header({ onSearchChange, onSelectSnippet }: HeaderProps) {
       </Box>
 
       {/* BUTTON */}
-      <CreateSnippetModal>
+      <CreateSnippetModal onCreateSnippet={onCreateSnippet}>
         <Button
           w={36}
           h={10}

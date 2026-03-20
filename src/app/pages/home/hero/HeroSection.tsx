@@ -1,22 +1,30 @@
-import { Text, Flex, Heading, Icon, Button } from "@chakra-ui/react";
-import { heroData } from "./heroData";
 import type { JSX } from "react";
+import { heroData } from "./heroData";
 import { SeeExample } from "./SeeExample";
-import { CreateSnippetModal } from "@/components/CreateSnippetModal";
 import { IoCodeSlash } from "react-icons/io5";
+import { CreateSnippetModal } from "@/components/CreateSnippetModal";
+import { Text, Flex, Heading, Icon, Button } from "@chakra-ui/react";
 
-export function HeroSection(): JSX.Element {
+import type { Snippet } from "../snippets/snippetsData";
+
+type HeroSectionProps = {
+  onCreateSnippet: React.Dispatch<React.SetStateAction<Snippet[]>>;
+};
+
+export function HeroSection({
+  onCreateSnippet,
+}: HeroSectionProps): JSX.Element {
   return (
     <>
       <Flex
+        p={1}
         mt={10}
+        gap={2}
+        rounded={"2xl"}
         align={"center"}
         justify={"center"}
-        gap={2}
-        bgColor={"#9ACA38/40"}
-        p={1}
-        rounded={"2xl"}
         borderWidth={"1px"}
+        bgColor={"#9ACA38/40"}
         borderColor={"#9ACA38"}
       >
         <Icon as={heroData.badge.icon} color="#9ACA38" />
@@ -25,22 +33,22 @@ export function HeroSection(): JSX.Element {
         </Text>
       </Flex>
 
-      <Flex flexDir={"column"} align={"center"} gap={10}>
+      <Flex px={20} flexDir={"column"} align={"center"} gap={10}>
         <Heading
-          color={"#9ACA38"}
           fontSize={82}
-          fontWeight={"light"}
-          textAlign={"center"}
           lineHeight={1}
+          color={"#9ACA38"}
+          textAlign={"center"}
+          fontWeight={"light"}
         >
           {heroData.title}
         </Heading>
-        <Text w={"md"} color={"#929292"} textAlign={"center"}>
+        <Text w={"lg"} color={"#929292"} textAlign={"center"}>
           {heroData.description}
         </Text>
 
         <Flex gap={5}>
-          <CreateSnippetModal>
+          <CreateSnippetModal onCreateSnippet={onCreateSnippet}>
             <Button
               w={36}
               h={10}

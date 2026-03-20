@@ -101,15 +101,17 @@ export const snippetsData: Snippet[] = [
     id: 7,
     title: "React useDebounce Hook",
     description: "Custom hook para otimizar buscas e inputs com debounce",
-    code: `<div class="container">
-    <h1>Hello, world!</h1>
-    <h1>Hello, world!</h1>
-    <h1>Hello, world!</h1>
-    <h1>Hello, world!</h1>
-    <h1>Hello, world!</h1>
-    <h1>Hello, world!</h1>
-    <h1>Hello, world!</h1>
-</div>`,
+    code: `<form onSubmit={handleSubmit(onSubmit)}>
+  <label>First Name</label>
+  <input {...register("firstName")} />
+  <label>Gender Selection</label>
+  <select {...register("gender")}>
+    <option value="female">female</option>
+    <option value="male">male</option>
+    <option value="other">other</option>
+  </select>
+  <input type="submit" />
+</form>`,
     language: "html",
   },
   {

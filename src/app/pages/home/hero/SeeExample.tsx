@@ -1,9 +1,9 @@
 import {
-  AspectRatio,
   Button,
-  CloseButton,
   Dialog,
   Portal,
+  CloseButton,
+  AspectRatio,
 } from "@chakra-ui/react";
 
 export const SeeExample = () => {
@@ -35,7 +35,9 @@ export const SeeExample = () => {
         <Dialog.Positioner>
           <Dialog.Content maxW={{ base: "90%", md: "300px", lg: "600px" }}>
             <Dialog.Body pt="4">
-              <Dialog.Title color={"#9ACA38"}>Como começar a criar Snippets </Dialog.Title>
+              <Dialog.Title color={"#9ACA38"}>
+                Como começar a criar Snippets{" "}
+              </Dialog.Title>
               <Dialog.Description mb="4" color="gray.400">
                 Esse video vai lhe ajudar a entender como criar seus primeiros
                 Snippets de código e organizar sua biblioteca pessoal de códigos
@@ -43,8 +45,8 @@ export const SeeExample = () => {
               </Dialog.Description>
               <AspectRatio ratio={4 / 3} rounded="lg" overflow="hidden">
                 <iframe
-                  title="naruto"
-                  src="https://www.youtube.com/embed/QhBnZ6NPOY0"
+                  title="Como criar Snippets no Codrillo"
+                  src="https://www.youtube.com/embed/GiPkAavNZQc?si=MTNHtSpSUZktLcxh"
                   allowFullScreen
                 />
               </AspectRatio>

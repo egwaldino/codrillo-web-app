@@ -1,19 +1,19 @@
 import {
-  VStack,
-  Stack,
   Icon,
-  Heading,
   Text,
-  SimpleGrid,
-  HStack,
   Flex,
+  Stack,
+  HStack,
+  VStack,
+  Heading,
+  SimpleGrid,
 } from "@chakra-ui/react";
 import { featuresData } from "./featuresData";
 import type { JSX } from "react";
 
 export function FeaturesSection(): JSX.Element {
   return (
-    <HStack>
+    <HStack px={"4rem"} w="full" justify={"center"}>
       <SimpleGrid columns={{ base: 1, md: 3 }} gap={6}>
         {featuresData.map((card) => (
           <VStack
@@ -24,31 +24,29 @@ export function FeaturesSection(): JSX.Element {
               borderColor: "#9ACA38",
               borderRadius: "4xl",
             }}
+            gap={3}
+            w={"full"}
+            h={"14rem"}
+            rounded={"2xl"}
+            align={"stretch"}
+            justify={"center"}
+            bgColor={"#2c2c2c"}
             transition="all 0.2s ease"
           >
             <Stack>
-              <VStack
-                w={"21rem"}
-                h={"12rem"}
-                p={5}
-                rounded={"2xl"}
-                bgColor={"#2c2c2c"}
-                gap={3}
-              >
+              <VStack p={5} gap={3} rounded={"2xl"} bgColor={"#2c2c2c"}>
                 <Flex
-                  rounded={"2xl"}
                   py={3}
                   px={3.5}
+                  rounded={"2xl"}
                   bgColor={"#9ACA38/40"}
-                  justify={"center"}
-                  align={"center"}
                 >
                   <Icon as={card.icon} boxSize={6} color={"#9ACA38"} />
                 </Flex>
                 <Heading size="md" color={"#9ACA38"}>
                   {card.title}
                 </Heading>
-                <Text textAlign="center" color="gray.300">
+                <Text px={14} fontSize={14} textAlign="center" color="gray.300">
                   {card.description}
                 </Text>
               </VStack>

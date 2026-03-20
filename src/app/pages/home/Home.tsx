@@ -1,16 +1,21 @@
-import { Header } from "@/components/Header";
 import { VStack } from "@chakra-ui/react";
+import { useEffect, type JSX } from "react";
+import { Header } from "@/components/Header";
+import { useHome } from "./_hooks-home/page";
 import { HeroSection } from "./hero/HeroSection";
 import { FeaturesSection } from "./features/FeaturesSection";
 import { SnippetsSection } from "./snippets/SnippetsSection";
-import { useState, useRef, useEffect, type JSX } from "react";
 
 export function Home(): JSX.Element {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [selectedSnippetTitle, setSelectedSnippetTitle] = useState<string | null>(
-    null,
-  );
-  const snippetsRef = useRef<HTMLDivElement | null>(null);
+  const {
+    setSnippets,
+    snippetsRef,
+    searchQuery,
+    setSearchQuery,
+    visibleSnippets,
+    selectedSnippetTitle,
+    setSelectedSnippetTitle,
+  } = useHome();
 
   useEffect(() => {
     if (!selectedSnippetTitle) return;
@@ -23,19 +28,21 @@ export function Home(): JSX.Element {
     }, 100);
 
     return () => clearTimeout(timer);
-  }, [selectedSnippetTitle]);
+  }, [selectedSnippetTitle, snippetsRef]);
 
   return (
-    <VStack>
+    <VStack w="full">
       <Header
+        onCreateSnippet={setSnippets}
         onSearchChange={setSearchQuery}
         onSelectSnippet={setSelectedSnippetTitle}
       />
-      <VStack w={"6xl"} gap={10}>
-        <HeroSection />
+      <VStack w={"full"} gap={10}>
+        <HeroSection onCreateSnippet={setSnippets} />
         <FeaturesSection />
         <SnippetsSection
           ref={snippetsRef}
+          snippets={visibleSnippets}
           searchQuery={searchQuery}
           selectedSnippetTitle={selectedSnippetTitle}
         />
